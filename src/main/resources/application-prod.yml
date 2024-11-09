@@ -4,20 +4,47 @@ server:
     encoding:
       charset: utf-8
 
+#spring:
+#  datasource:
+#    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}?createDatabaseIfNotExist=true
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: ${rds.username}
+#    password: ${rds.password}
+#
+#  jpa:
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: none
+#      naming:
+##        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#
+#logging:
+#  level:
+#    '[org.springframework.boot.web]': INFO
 spring:
   datasource:
-    url: jdbc:mariadb://${rds.hostname}:${rds.port}/${rds.db.name} 
-    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}?createDatabaseIfNotExist=true
     username: ${rds.username}
     password: ${rds.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  h2:
+    console:
+      enabled: true
 
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      '[hibernate.format_sql]': true
+
+  output:
+    ansi:
+      enabled: always
 
 logging:
   level:
-    '[org.springframework.boot.web]': INFO
+    '[org.springframework.boot.web]': DEBUG
