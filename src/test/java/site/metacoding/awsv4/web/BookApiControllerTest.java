@@ -60,7 +60,7 @@ public class BookApiControllerTest {
 
     @Order(1)
     @Test
-    public void 책목록보기_테스트() {
+    public void booklist_test() {
 
         List<Book> books = Arrays.asList(
                 new Book("제목1", "내용1", "메타코딩"),
@@ -85,7 +85,7 @@ public class BookApiControllerTest {
 
     @Order(2)
     @Test
-    public void 책등록_테스트() throws Exception {
+    public void bookregist_test() throws Exception {
 
         // 데이터 준비
         HttpHeaders headers = new HttpHeaders();
