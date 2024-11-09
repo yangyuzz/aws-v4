@@ -15,12 +15,6 @@ jobs:
         with:
           java-version: 17
 
-      - name: fuck
-        run: |
-          touch ./src/main/resources/application.yml
-          echo "${{ secrets.VAR_TEST }}" > ./src/main/resources/application.yml
-          cat ./src/main/resources/application.yml
-
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         shell: bash
