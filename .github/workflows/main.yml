@@ -1,0 +1,5 @@
+name: aws-v4-cicd
+on:
+  push:
+    branches:
+      -cicd
