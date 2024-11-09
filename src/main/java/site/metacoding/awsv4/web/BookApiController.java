@@ -22,7 +22,7 @@ public class BookApiController {
 
     @GetMapping("/")
     public String home() {
-        return "<h1>aws-v4</h1>";
+        return "<h1>aws-v4-1109</h1>";
     }
 
     @PostMapping("/api/book")
